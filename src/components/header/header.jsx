@@ -6,11 +6,9 @@ import * as Styled from './header.styles'
 const Header = ({ siteTitle }) => (
   <Styled.Header>
     <Styled.TitleWrapper padding="3rem">
-      <Styled.Header>
-        <Styled.StyledLink to="/">
-          {siteTitle}
-        </Styled.StyledLink>
-      </Styled.Header>
+      <Styled.StyledLink to="/">
+        {siteTitle}
+      </Styled.StyledLink>
     </Styled.TitleWrapper>
   </Styled.Header>
 )
