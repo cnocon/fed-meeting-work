@@ -1,19 +1,24 @@
 import styled from '@emotion/styled'
-
-// export const ImageContainer = styled.div`
-//   margin-bottom: 1.45rem;
-//   max-width: 300px;
-//   padding: .5rem;
-//   border: 1px solid gray;
-// `
+import { css } from '@emotion/core'
 
 export const ImageContainer = styled.div(
-  props => ({
-    width: `${props.width}`,
+  ({width, alignment}) => ({
+    width: `${width}`,
     margin: `1rem 0 0 1rem`,
     padding: `.5rem`,
-    border: `1px solid gray`,
-    float: `${props.alignment || 'none'}`,
+    border: `3px solid royalblue`,
+    float: `${alignment || 'none'}`,
   })
 )
+
+export const ImageContainerAlt = styled.div(
+  ({theme}) => ({
+    margin: `1rem 0 0 1rem`,
+    padding: `.5rem`,
+    border: `3px solid ${theme.color.tertiary}`,
+    width: '30%',
+    float: 'right'
+  })
+)
+
 

@@ -9,10 +9,12 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
+import ThemeProvider from "./ThemeProvider"
 import Header from "./header/header"
 import Wrapper from "./wrapper/wrapper"
 import Footer from "./footer/footer"
 import "./layout.css"
+import theme from "../theme"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,13 +28,13 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <Wrapper>
-        <main>{children}</main>
-        <Footer />
+        <main style={{overflow: 'hidden'}}>{children}</main>
       </Wrapper>
-    </>
+      <Footer />
+    </ThemeProvider>
   )
 }
 
